@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Interest1:
+  = @interest_calculator.interest1
+%p
+  %b Interest2:
+  = @interest_calculator.interest2
+%p
+  %b Interest1duration:
+  = @interest_calculator.interest1duration
+%p
+  %b Interest2duration:
+  = @interest_calculator.interest2duration
+%p
+  %b Interestafter:
+  = @interest_calculator.interestAfter
+%p
+  %b Amount:
+  = @interest_calculator.amount
+%p
+  %b Payment:
+  = @interest_calculator.payment
+%p
+  %b Specialpayment:
+  = @interest_calculator.specialPayment
+%p
+  %b Paymentmethod:
+  = @interest_calculator.paymentMethod
+
+= link_to 'Edit', edit_interest_calculator_path(@interest_calculator)
+\|
+= link_to 'Back', interest_calculators_path

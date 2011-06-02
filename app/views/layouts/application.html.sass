@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title= "Testseite - #{@title}"
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{:id => "#{params[:controller].parameterize} #{params[:view]}"}
+    #main
+      %div{:class=>"container"}
+        %div{:class=>"span-24", :id=>"header"}
+          =render :partial => "shared/header"
+        %div{:class=>"span-17 colborder", :id=>"content"}
+          = yield
+        %div{:class=>"span-6 last"}
+          =render :partial => "shared/sidebar"
+        .span-24
+          =render :partial => "shared/footer"

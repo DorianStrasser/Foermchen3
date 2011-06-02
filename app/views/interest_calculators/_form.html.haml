@@ -1,0 +1,37 @@
+= form_for @interest_calculator do |f|
+  -if @interest_calculator.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@interest_calculator.errors.count, "error")} prohibited this interest_calculator from being saved:"
+      %ul
+        - @interest_calculator.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :interest1
+    = f.text_field :interest1
+  .field
+    = f.label :interest2
+    = f.text_field :interest2
+  .field
+    = f.label :interest1duration
+    = f.text_field :interest1duration
+  .field
+    = f.label :interest2duration
+    = f.text_field :interest2duration
+  .field
+    = f.label :interestAfter
+    = f.text_field :interestAfter
+  .field
+    = f.label :amount
+    = f.text_field :amount
+  .field
+    = f.label :payment
+    = f.text_field :payment
+  .field
+    = f.label :specialPayment
+    = f.text_field :specialPayment
+  .field
+    = f.label :paymentMethod
+    = f.text_field :paymentMethod
+  .actions
+    = f.submit 'Save'

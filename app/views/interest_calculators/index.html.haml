@@ -1,0 +1,35 @@
+%h1 Listing interest_calculators
+
+%table
+  %tr
+    %th Interest1
+    %th Interest2
+    %th Interest1duration
+    %th Interest2duration
+    %th Interestafter
+    %th Amount
+    %th Payment
+    %th Specialpayment
+    %th Paymentmethod
+    %th
+    %th
+    %th
+
+  - @interest_calculators.each do |interest_calculator|
+    %tr
+      %td= interest_calculator.interest1
+      %td= interest_calculator.interest2
+      %td= interest_calculator.interest1duration
+      %td= interest_calculator.interest2duration
+      %td= interest_calculator.interestAfter
+      %td= interest_calculator.amount
+      %td= interest_calculator.payment
+      %td= interest_calculator.specialPayment
+      %td= interest_calculator.paymentMethod
+      %td= link_to 'Show', interest_calculator
+      %td= link_to 'Edit', edit_interest_calculator_path(interest_calculator)
+      %td= link_to 'Destroy', interest_calculator, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Interest calculator', new_interest_calculator_path
