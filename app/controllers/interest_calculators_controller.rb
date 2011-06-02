@@ -1,4 +1,10 @@
 class InterestCalculatorsController < ApplicationController
+  before_filter :preparePage
+
+  def preparePage
+    @title = "Calculator"
+  end
+
   # GET /interest_calculators
   # GET /interest_calculators.xml
   def index
