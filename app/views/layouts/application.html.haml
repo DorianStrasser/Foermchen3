@@ -8,7 +8,7 @@
       = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
     = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.13.custom.css'
     = stylesheet_link_tag :all
-    = javascript_include_tag :defaults, "calc", "test"
+    = javascript_include_tag :defaults, "calc"
     = csrf_meta_tag
   %body{:id => "#{params[:controller].parameterize} #{params[:view]}"}
     #main
