@@ -16,7 +16,7 @@ input.percent
 #interestBox
   +box
   width: 90%
-  height: 140px
+  height: 180px
   background: grey
   border-style: solid
   position: relative
@@ -26,11 +26,13 @@ input.percent
   +box
   color: black
   width: 110px
-  height: 110px
+  height: 140px
   padding: 10px
   position: relative
   float: left
   font-weight: bold
+  margin-top: 15px
+  margin-left: 15px
 
   h3
     font-weight: bold
@@ -41,6 +43,17 @@ input.percent
     position: absolute
     top: 3
     left: 0
+
+  .icon
+    //width: 24px
+    margin-top: 8px
+
+  .icon_text
+    float: right
+    //font-size: 10px
+    font-weight: bold
+    align: right
+    margin-top: 8px
 
 .deactivated
   background: #666666
@@ -74,8 +87,8 @@ input.percent
 .hint
   width: 32px
   position: absolute
-  top: 0
-  right: -3px
+  bottom: 0
+  right: 0px
 
 .tooltip
   display: none
@@ -89,10 +102,14 @@ input.percent
 /* override the arrow image of the tooltip */
 .tooltip.bottom
   background: transparent url(/images/tooltip/black_arrow_bottom.png)
-  height: 100px
 
 .best
   background: green
 
 #results
   +box
+
+#footer
+  background: #333333
+  color: #f5f5f5
+  width: 100%

@@ -1319,7 +1319,7 @@ input.percent {
   margin-left: 20px;
   margin-bottom: 20px;
   width: 90%;
-  height: 140px;
+  height: 180px;
   background: grey;
   border-style: solid;
   position: relative;
@@ -1338,31 +1338,44 @@ input.percent {
   margin-bottom: 20px;
   color: black;
   width: 110px;
-  height: 110px;
+  height: 140px;
   padding: 10px;
   position: relative;
   float: left;
   font-weight: bold;
+  margin-top: 15px;
+  margin-left: 15px;
 }
-/* line 35, ../../app/stylesheets/partials/_calc.sass */
+/* line 37, ../../app/stylesheets/partials/_calc.sass */
 .offer h3 {
   font-weight: bold;
   margin: 0px;
   text-align: center;
 }
-/* line 40, ../../app/stylesheets/partials/_calc.sass */
+/* line 42, ../../app/stylesheets/partials/_calc.sass */
 .offer .deactivator {
   position: absolute;
   top: 3;
   left: 0;
 }
+/* line 47, ../../app/stylesheets/partials/_calc.sass */
+.offer .icon {
+  margin-top: 8px;
+}
+/* line 51, ../../app/stylesheets/partials/_calc.sass */
+.offer .icon_text {
+  float: right;
+  font-weight: bold;
+  align: right;
+  margin-top: 8px;
+}
 
-/* line 45, ../../app/stylesheets/partials/_calc.sass */
+/* line 58, ../../app/stylesheets/partials/_calc.sass */
 .deactivated {
   background: #666666;
 }
 
-/* line 48, ../../app/stylesheets/partials/_calc.sass */
+/* line 61, ../../app/stylesheets/partials/_calc.sass */
 #generalBox {
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
@@ -1379,39 +1392,39 @@ input.percent {
   border-width: 2px;
   position: relative;
 }
-/* line 57, ../../app/stylesheets/partials/_calc.sass */
+/* line 70, ../../app/stylesheets/partials/_calc.sass */
 #generalBox th, #generalBox td {
   text-align: center;
   margin: 0px;
   padding: 0px;
 }
-/* line 62, ../../app/stylesheets/partials/_calc.sass */
+/* line 75, ../../app/stylesheets/partials/_calc.sass */
 #generalBox th {
   font-size: 15px;
 }
-/* line 64, ../../app/stylesheets/partials/_calc.sass */
+/* line 77, ../../app/stylesheets/partials/_calc.sass */
 #generalBox input {
   width: 50px;
   margin: 0px;
 }
-/* line 68, ../../app/stylesheets/partials/_calc.sass */
+/* line 81, ../../app/stylesheets/partials/_calc.sass */
 #generalBox #interest_calculator_amount {
   width: 65px;
 }
-/* line 71, ../../app/stylesheets/partials/_calc.sass */
+/* line 84, ../../app/stylesheets/partials/_calc.sass */
 #generalBox #interest_calculator_interestAfter {
   width: 25px;
 }
 
-/* line 74, ../../app/stylesheets/partials/_calc.sass */
+/* line 87, ../../app/stylesheets/partials/_calc.sass */
 .hint {
   width: 32px;
   position: absolute;
-  top: 0;
-  right: -3px;
+  bottom: 0;
+  right: 0px;
 }
 
-/* line 80, ../../app/stylesheets/partials/_calc.sass */
+/* line 93, ../../app/stylesheets/partials/_calc.sass */
 .tooltip {
   display: none;
   background: transparent url("/images/tooltip/black_arrow.png");
@@ -1423,18 +1436,17 @@ input.percent {
 }
 
 /* override the arrow image of the tooltip */
-/* line 90, ../../app/stylesheets/partials/_calc.sass */
+/* line 103, ../../app/stylesheets/partials/_calc.sass */
 .tooltip.bottom {
   background: transparent url(/images/tooltip/black_arrow_bottom.png);
-  height: 100px;
 }
 
-/* line 94, ../../app/stylesheets/partials/_calc.sass */
+/* line 106, ../../app/stylesheets/partials/_calc.sass */
 .best {
   background: green;
 }
 
-/* line 97, ../../app/stylesheets/partials/_calc.sass */
+/* line 109, ../../app/stylesheets/partials/_calc.sass */
 #results {
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
@@ -1444,4 +1456,11 @@ input.percent {
   border-radius: 25px;
   margin-left: 20px;
   margin-bottom: 20px;
+}
+
+/* line 112, ../../app/stylesheets/partials/_calc.sass */
+#footer {
+  background: #333333;
+  color: #f5f5f5;
+  width: 100%;
 }

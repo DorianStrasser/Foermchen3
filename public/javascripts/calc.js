@@ -31,6 +31,7 @@ function zinsTotalNull(geliehen, zins, bindung, zinsDanach, zahlungMonat, zahlun
 
 function updateGraph(){
     console.log("Update Graph");
+    series0 = series1 = series2 = series3 = [];
     var geliehen = $("#interest_calculator_amount").val();
     var zahlungMonat = "0";
     var zahlungJahr = "0";
@@ -79,7 +80,7 @@ function updateGraph(){
     if(plot0){
         series.push(series0);
         if(series0.length == min){
-            $("#offer0").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+            $("#offer0").addClass("best").stop().animate({ backgroundColor: "green" }, 1000);
         }else{
             $("#offer0").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
@@ -87,7 +88,7 @@ function updateGraph(){
     if(plot1){
         series.push(series1);
         if(series1.length == min){
-            $("#offer1").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+            $("#offer1").addClass("best").stop().animate({ backgroundColor: "green" }, 1000);
         }else{
             $("#offer1").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
@@ -95,7 +96,7 @@ function updateGraph(){
     if(plot2){
         series.push(series2);
         if(series2.length == min){
-            $("#offer2").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+            $("#offer2").addClass("best").stop().animate({ backgroundColor: "green" }, 1000);
         }else{
             $("#offer2").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
@@ -103,12 +104,65 @@ function updateGraph(){
     if(plot3){
         series.push(series3);
         if(series3.length == min){
-            $("#offer3").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+            $("#offer3").addClass("best").stop().animate({ backgroundColor: "green" }, 1000);
         }else{
             $("#offer3").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
     }
     $.plot($("#placeholder"), series);
+    
+    //Zielflaggen befüllen
+    if(plot0){
+        var years = Math.floor(series0.length/12);
+        var months = series0.length % 12;
+        if(years != 0){
+            $("#time0").html(years + " Jahre<br>" + months + " Monate");
+        }else{
+            $("#time0").html(months + " Monate");
+        }
+
+    }else{
+        $("#time0").html("-");
+    }
+    
+    if(plot1){
+        var years = Math.floor(series1.length/12);
+        var months = series1.length % 12;
+        if(years != 1){
+            $("#time1").html(years + " Jahre<br>" + months + " Monate");
+        }else{
+            $("#time1").html(months + " Monate");
+        }
+
+    }else{
+        $("#time1").html("-");
+    }
+    
+    if(plot2){
+        var years = Math.floor(series2.length/12);
+        var months = series2.length % 12;
+        if(years != 2){
+            $("#time2").html(years + " Jahre<br>" + months + " Monate");
+        }else{
+            $("#time2").html(months + " Monate");
+        }
+
+    }else{
+        $("#time2").html("-");
+    }
+    
+    if(plot3){
+        var years = Math.floor(series3.length/12);
+        var months = series3.length % 12;
+        if(years != 3){
+            $("#time3").html(years + " Jahre<br>" + months + " Monate");
+        }else{
+            $("#time3").html(months + " Monate");
+        }
+
+    }else{
+        $("#time3").html("-");
+    }
 
 }
 
