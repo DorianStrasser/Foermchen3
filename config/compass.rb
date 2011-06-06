@@ -16,4 +16,3 @@ http_path = "/"
 
 preferred_syntax = :sass
 
-css_dir = "tmp/stylesheets/compiled"
