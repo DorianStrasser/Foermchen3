@@ -9,7 +9,7 @@ function zinsTotalNull(geliehen, zins, bindung, zinsDanach, zahlungMonat, zahlun
     var series = [];
     var count = 1;
     series.push([0, parseFloat(rest)]);
-    while (rest >= 0 && count < 120){
+    while (rest >= 0 && count < 400){
         if(count <= (bindung*12)){
             if (count % 12 == 0){
                 rest = parseFloat(rest)+rest*(zins/100)/12-zahlungMonat-zahlungJahr-sonderzahlung;
@@ -23,13 +23,14 @@ function zinsTotalNull(geliehen, zins, bindung, zinsDanach, zahlungMonat, zahlun
                 rest = parseFloat(rest)+rest*(zinsDanach/100)/12-zahlungMonat;
             }
         }
+        series.push([count, rest]);
         count++;
-        series.push([count, rest])
     }
     return series;
 }
 
 function updateGraph(){
+    console.log("Update Graph");
     var geliehen = $("#interest_calculator_amount").val();
     var zahlungMonat = "0";
     var zahlungJahr = "0";
@@ -78,41 +79,33 @@ function updateGraph(){
     if(plot0){
         series.push(series0);
         if(series0.length == min){
-            $("#offer0").removeClass("best");
-            $("#offer1").removeClass("best");
-            $("#offer2").removeClass("best");
-            $("#offer3").removeClass("best");
-            $("#offer0").addClass("best");
+            $("#offer0").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+        }else{
+            $("#offer0").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
     }
     if(plot1){
         series.push(series1);
         if(series1.length == min){
-            $("#offer0").removeClass("best");
-            $("#offer1").removeClass("best");
-            $("#offer2").removeClass("best");
-            $("#offer3").removeClass("best");
-            $("#offer1").addClass("best");
+            $("#offer1").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+        }else{
+            $("#offer1").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
     }
     if(plot2){
         series.push(series2);
         if(series2.length == min){
-            $("#offer0").removeClass("best");
-            $("#offer1").removeClass("best");
-            $("#offer2").removeClass("best");
-            $("#offer3").removeClass("best");
-            $("#offer2").addClass("best");
+            $("#offer2").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+        }else{
+            $("#offer2").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
     }
     if(plot3){
         series.push(series3);
         if(series3.length == min){
-            $("#offer0").removeClass("best");
-            $("#offer1").removeClass("best");
-            $("#offer2").removeClass("best");
-            $("#offer3").removeClass("best");
-            $("#offer3").addClass("best");
+            $("#offer3").addClass("best").stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
+        }else{
+            $("#offer3").removeClass("best").stop().animate({ backgroundColor: "orange" }, 1000);
         }
     }
     $.plot($("#placeholder"), series);
@@ -130,6 +123,7 @@ function toogleActive(target){
 
 function makeSlider(target){
     target.each(function(){
+        console.log("Made slider");
         var as = this;
         $(this).children(".slider_interest").slider({
             value:$(this).children(".interest").val(),
@@ -161,9 +155,9 @@ $(function() {
     makeSlider($(".offer"));
 
     $("button").button();
-    BoxCount = $(".offer").length;
 
     $(".deactivator").change(function(){
+        console.log("Deactivator changed");
         var offer = $(this).parent(".offer");
         offer.toggleClass("deactivated");
         if (offer.hasClass("deactivated")) {
@@ -172,13 +166,7 @@ $(function() {
             offer.children(".interest").attr("disabled","disabled");
             offer.children(".slider_interest").slider("disable");
         }else{
-            if($(this).hasClass("best")){
-                offer.stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "green" }, 1000);
-
-            }else{
-                offer.stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "orange" }, 1000);
-
-            }
+            offer.stop().animate({ backgroundColor: "white" }, 150).animate({ backgroundColor: "orange" }, 1000);
             offer.children("select").removeAttr("disabled");
             offer.children(".interest").removeAttr("disabled");
             offer.children(".slider_interest").slider("enable");
