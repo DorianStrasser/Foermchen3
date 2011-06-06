@@ -2,10 +2,6 @@
 
 %table
   %tr
-    %th Interest1
-    %th Interest2
-    %th Interest1duration
-    %th Interest2duration
     %th Interestafter
     %th Amount
     %th Payment
@@ -17,10 +13,6 @@
 
   - @interest_calculators.each do |interest_calculator|
     %tr
-      %td= interest_calculator.interest1
-      %td= interest_calculator.interest2
-      %td= interest_calculator.interest1duration
-      %td= interest_calculator.interest2duration
       %td= interest_calculator.interestAfter
       %td= interest_calculator.amount
       %td= interest_calculator.payment

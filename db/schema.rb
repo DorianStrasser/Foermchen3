@@ -10,18 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110602195628) do
+ActiveRecord::Schema.define(:version => 20110603152624) do
 
   create_table "interest_calculators", :force => true do |t|
-    t.float    "interest1"
-    t.float    "interest2"
-    t.integer  "interest1duration"
-    t.integer  "interest2duration"
     t.float    "interestAfter"
     t.float    "amount"
     t.float    "payment"
     t.float    "specialPayment"
     t.integer  "paymentMethod"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "offers", :force => true do |t|
+    t.float    "interest"
+    t.float    "duration"
+    t.integer  "interest_calculator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

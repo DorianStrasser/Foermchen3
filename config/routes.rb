@@ -1,4 +1,10 @@
 Foermchen3::Application.routes.draw do
+  get "offer_controller/save"
+
+  get "offer_controller/open"
+
+  get "offer_controller/delete"
+
   resources :interest_calculators
 
   # The priority is based upon order of creation:

@@ -57,9 +57,154 @@ a img {
   border: none;
 }
 
-/* line 2, ../../app/stylesheets/partials/_calc.sass */
+/* line 8, ../../app/stylesheets/partials/_calc.sass */
+#placeholder {
+  width: 90%;
+  height: 400px;
+  margin-left: 20px;
+}
+
+/* line 14, ../../app/stylesheets/partials/_calc.sass */
 #edit_interest_calculator_1 .percent {
   width: 25px;
+}
+
+/* line 17, ../../app/stylesheets/partials/_calc.sass */
+#interestBox {
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  height: 140px;
+  background: grey;
+  border-style: solid;
+  position: relative;
+  border-width: 2px;
+}
+
+/* line 26, ../../app/stylesheets/partials/_calc.sass */
+.offer {
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  color: black;
+  width: 110px;
+  height: 110px;
+  padding: 10px;
+  position: relative;
+  float: left;
+  font-weight: bold;
+}
+/* line 36, ../../app/stylesheets/partials/_calc.sass */
+.offer h3 {
+  font-weight: bold;
+  margin: 0px;
+  text-align: center;
+}
+/* line 41, ../../app/stylesheets/partials/_calc.sass */
+.offer .deactivator {
+  position: absolute;
+  top: 3;
+  left: 0;
+}
+
+/* line 46, ../../app/stylesheets/partials/_calc.sass */
+.deactivated {
+  background: #666666;
+}
+
+/* line 49, ../../app/stylesheets/partials/_calc.sass */
+#generalBox {
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  height: 70px;
+  background: orange;
+  border-style: solid;
+  border-width: 2px;
+  position: relative;
+}
+/* line 58, ../../app/stylesheets/partials/_calc.sass */
+#generalBox th, #generalBox td {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 63, ../../app/stylesheets/partials/_calc.sass */
+#generalBox th {
+  font-size: 15px;
+}
+/* line 65, ../../app/stylesheets/partials/_calc.sass */
+#generalBox input {
+  width: 50px;
+  margin: 0px;
+}
+/* line 69, ../../app/stylesheets/partials/_calc.sass */
+#generalBox #interest_calculator_amount {
+  width: 65px;
+}
+/* line 72, ../../app/stylesheets/partials/_calc.sass */
+#generalBox #interest_calculator_interestAfter {
+  width: 25px;
+}
+
+/* line 75, ../../app/stylesheets/partials/_calc.sass */
+.hint {
+  width: 32px;
+  position: absolute;
+  top: 0;
+  right: -3px;
+}
+
+/* line 81, ../../app/stylesheets/partials/_calc.sass */
+.tooltip {
+  display: none;
+  background: transparent url("/images/tooltip/black_arrow.png");
+  font-size: 12px;
+  height: 70px;
+  width: 160px;
+  padding: 25px;
+  color: white;
+}
+
+/* override the arrow image of the tooltip */
+/* line 91, ../../app/stylesheets/partials/_calc.sass */
+.tooltip.bottom {
+  background: transparent url(/images/tooltip/black_arrow_bottom.png);
+  height: 100px;
+}
+
+/* line 95, ../../app/stylesheets/partials/_calc.sass */
+.best {
+  background: green;
+}
+
+/* line 98, ../../app/stylesheets/partials/_calc.sass */
+#results {
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 /* line 33, ../../../../.rvm/gems/ruby-1.8.7-p334@3/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
@@ -1246,9 +1391,14 @@ textarea {
 
 /* line 39, ../../../../.rvm/gems/ruby-1.8.7-p334@3/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */
 .box {
-  padding: 1.5em;
-  margin-bottom: 1.5em;
-  background: #e5ecf9;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 /* line 42, ../../../../.rvm/gems/ruby-1.8.7-p334@3/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */

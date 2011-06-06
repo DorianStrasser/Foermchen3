@@ -1,39 +1,40 @@
-%div{:class=>"span-11 colborder"}
-  = form_for @interest_calculator do |f|
-    -if @interest_calculator.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@interest_calculator.errors.count, "error")} prohibited this interest_calculator from being saved:"
-        %ul
-          - @interest_calculator.errors.full_messages.each do |msg|
-            %li= msg
+= form_for @interest_calculator do |f|
+  -if @interest_calculator.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@interest_calculator.errors.count, "error")} prohibited this interest_calculator from being saved:"
+      %ul
+        - @interest_calculator.errors.full_messages.each do |msg|
+          %li= msg
 
-    %div
-      Zinsbindung für die ersten
-      = f.select :interest1duration, %w{1 2 3 5 10}
-      Jahre
-      = f.text_field :interest1, :class=>"percent"
+  #generalBox
+    %img{:class=>"hint", :src=>"/images/Help.png", :title=>"Gib hier deine Ausgangswerte ein."}
+    %table
+      %tr
+        %th Höhe
+        %th Abzahlung
+        %th Rhythmus
+        %th Sondertilgung
+        %th Anschlusszins
+      %tr
+        %td
+          = f.text_field :amount
+        %td
+          = f.text_field :payment
+        %td
+          = f.select :paymentMethod, %w{monatlich jährlich}
+        %td
+          = f.text_field :specialPayment
+        %td
+          = f.text_field :interestAfter
 
-      #slider_interest1
+  #interestBox
+    - 4.times  do |offer|
+      = render :partial=>"offers/show", :locals => { :offer => offer }
+    %img{:class=>"hint", :src=>"/images/Help.png", :title=>"Aktiviere Angebote, indem du einen Haken setzt."}
 
-    %div
-      Zinsbindung für die ersten
-      = f.select :interest1duration, %w{1 2 3 5 10 15}
-      Jahre
-      = f.text_field :interest2, :class=>"percent"
+  #results
 
-      #slider_interest2
-    .field
-      = f.text_field :interest2duration
-    .field
-      = f.text_field :interestAfter
-    .field
-      = f.text_field :amount
-    .field
-      = f.text_field :payment
-    .field
-      = f.text_field :specialPayment
-    .field
-      = f.text_field :paymentMethod
-    .actions
-      = f.submit 'Save'
-%div{:class=>"span-12 last"}
+  #placeholder
+
+  .actions
+    = f.submit 'Save'

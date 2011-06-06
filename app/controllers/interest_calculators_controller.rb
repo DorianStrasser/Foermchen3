@@ -41,6 +41,7 @@ class InterestCalculatorsController < ApplicationController
   # GET /interest_calculators/1/edit
   def edit
     @interest_calculator = InterestCalculator.find(params[:id])
+    @offers = @interest_calculator.offers()
   end
 
   # POST /interest_calculators

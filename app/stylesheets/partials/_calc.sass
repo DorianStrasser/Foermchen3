@@ -1,3 +1,99 @@
+@import compass/css3, compass/utilities
+
+@mixin box
+  +border-radius(25px)
+  margin-left: 20px
+  margin-bottom: 20px
+
+#placeholder
+  width: 90%
+  height: 400px
+  margin-left: 20px
+
 #edit_interest_calculator_1
   .percent
     width: 25px
+
+#interestBox
+  +box
+  width: 90%
+  height: 140px
+  background: grey
+  border-style: solid
+  position: relative
+  border-width: 2px
+
+.offer
+  +box
+  color: black
+  width: 110px
+  height: 110px
+  padding: 10px
+  position: relative
+  float: left
+  font-weight: bold
+
+  h3
+    font-weight: bold
+    margin: 0px
+    text-align: center
+
+  .deactivator
+    position: absolute
+    top: 3
+    left: 0
+
+.deactivated
+  background: #666666
+
+#generalBox
+  +box
+  width: 90%
+  height: 70px
+  background: orange
+  border-style: solid
+  border-width: 2px
+  position: relative
+
+  th, td
+    text-align: center
+    margin: 0px
+    padding: 0px
+
+  th
+    font-size: 15px
+  input
+    width: 50px
+    margin: 0px
+
+  #interest_calculator_amount
+    width: 65px
+
+  #interest_calculator_interestAfter
+    width: 25px
+
+.hint
+  width: 32px
+  position: absolute
+  top: 0
+  right: -3px
+
+.tooltip
+  display: none
+  background: transparent url("/images/tooltip/black_arrow.png")
+  font-size: 12px
+  height: 70px
+  width: 160px
+  padding: 25px
+  color: #fff
+
+/* override the arrow image of the tooltip */
+.tooltip.bottom
+  background: transparent url(/images/tooltip/black_arrow_bottom.png)
+  height: 100px
+
+.best
+  background: green
+
+#results
+  +box

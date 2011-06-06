@@ -1,0 +1,10 @@
+%div{:class=>"offer deactivated", :id=>"offer#{offer}"}
+  %input{:type=>"checkbox", :name=>"c#{offer}", :class=>"deactivator"}
+  %h3  Angebot #{offer + 1}
+  %select{:disabled=>"disabled", :id=>"fixed#{offer}"}
+    - %w{1 2 3 5 10 15}.each do |n|
+      %option{:value=>"#{n}"} #{n}
+  Jahre
+  %input{:type=>"text", :id=>"interest#{offer}", :class=>"percent interest", :value=>"#{offer+2.5}", :disabled=>"disabled"}
+  Prozent
+  .slider_interest
