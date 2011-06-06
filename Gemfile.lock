@@ -125,7 +125,6 @@ GEM
     ruby-debug-base (0.10.4)
       linecache (>= 0.3)
     sass (3.1.2)
-    simple_form (1.4.0)
     sqlite3 (1.3.3)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
@@ -154,7 +153,6 @@ DEPENDENCIES
   rspec-rails
   ruby-debug
   sass
-  simple_form
   sqlite3
   sqlite3-ruby
   therubyracer-heroku
